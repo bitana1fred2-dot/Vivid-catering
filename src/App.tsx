@@ -627,7 +627,7 @@ function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1">Location</h4>
-                    <p className="text-gray-300">KK 524 St, Kigali, Rwanda</p>
+                    <p className="text-gray-300">KK23 St, Kigali, Rwanda</p>
                   </div>
                 </div>
                 
@@ -639,7 +639,7 @@ function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1">Phone</h4>
-                    <a href="tel:+250784347573" className="text-gray-300 hover:text-amber-400 transition-colors">0784 347 573</a>
+                    <a href="tel:+250784347573" className="text-gray-300 hover:text-amber-400 transition-colors">+250 784 347 573</a>
                   </div>
                 </div>
                 
@@ -651,7 +651,7 @@ function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1">Hours</h4>
-                    <p className="text-gray-300">Open 24 Hours</p>
+                    <p className="text-gray-300">Open Monday-Sunday</p>
                     <p className="text-sm text-gray-400">Available for any event, anytime</p>
                   </div>
                 </div>
@@ -836,9 +836,9 @@ function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-6">Contact</h4>
             <ul className="space-y-3 text-gray-400">
-              <li>KK 524 St, Kigali</li>
-              <li><a href="tel:+250784347573" className="hover:text-amber-400 transition-colors">0784 347 573</a></li>
-              <li>Open 24 Hours</li>
+              <li>KK23 St, Kigali</li>
+              <li><a href="tel:+250784347573" className="hover:text-amber-400 transition-colors">+250 784 347 573</a></li>
+              <li>Open Monday-Sunday</li>
             </ul>
           </div>
         </div>

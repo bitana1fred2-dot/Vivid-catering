@@ -474,9 +474,9 @@ export default function WeddingCateringPage() {
             <div>
               <h4 className="font-semibold text-lg mb-6">Contact</h4>
               <ul className="space-y-3 text-gray-400">
-                <li>KK 524 St, Kigali</li>
-                <li><a href="tel:+250784347573" className="hover:text-amber-400 transition-colors">0784 347 573</a></li>
-                <li>Open 24 Hours</li>
+                <li>KK23 St, Kigali</li>
+                <li><a href="tel:+250784347573" className="hover:text-amber-400 transition-colors">+250 784 347 573</a></li>
+                <li>Open Monday-Sunday</li>
               </ul>
             </div>
           </div>

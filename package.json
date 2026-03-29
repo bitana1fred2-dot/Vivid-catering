@@ -1,17 +1,12 @@
 {
-  "name": "vivid-catering",
+  "name": "react-vite-tailwind",
   "private": true,
   "version": "0.0.0",
-  "description": "Vivid Catering marketing site (Vite + React + Tailwind + React Router).",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bitana1fred2-dot/Vivid-catering.git"
   },
   "dependencies": {
     "clsx": "2.1.1",

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const GalleryPage = () => {
   const navigate = useNavigate();
@@ -7,15 +7,6 @@ const GalleryPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const navigateToHomeSection = (sectionId: string) => {
-    setMobileMenuOpen(false);
-    navigate("/");
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
-      section?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100);
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,16 +16,16 @@ const GalleryPage = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleRequestQuote = () => {
-    navigate("/");
+    navigate('/');
     setTimeout(() => {
-      const contactSection = document.getElementById("contact");
+      const contactSection = document.getElementById('contact');
       if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth" });
+        contactSection.scrollIntoView({ behavior: 'smooth' });
       }
     }, 100);
   };
@@ -115,35 +106,11 @@ const GalleryPage = () => {
             <div className={`hidden lg:flex items-center space-x-8 transition-all duration-500 ${isScrolled ? 'opacity-0 -translate-y-5 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
               <Link to="/" className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors">Home</Link>
               <Link to="/about" className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors">About</Link>
-              <button
-                type="button"
-                onClick={() => navigateToHomeSection("services")}
-                className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors"
-              >
-                Services
-              </button>
-              <button
-                type="button"
-                onClick={() => navigateToHomeSection("menu")}
-                className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors"
-              >
-                Menu
-              </button>
+              <Link to="/#services" className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors">Services</Link>
+              <Link to="/#menu" className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors">Menu</Link>
               <span className="text-amber-400 font-medium text-sm uppercase tracking-wider border-b-2 border-amber-400 pb-1">Gallery</span>
-              <button
-                type="button"
-                onClick={() => navigateToHomeSection("testimonials")}
-                className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors"
-              >
-                Testimonials
-              </button>
-              <button
-                type="button"
-                onClick={() => navigateToHomeSection("contact")}
-                className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors"
-              >
-                Contact
-              </button>
+              <Link to="/#testimonials" className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors">Testimonials</Link>
+              <Link to="/#contact" className="text-white font-medium text-sm uppercase tracking-wider hover:text-amber-400 transition-colors">Contact</Link>
               <a href="tel:+250784347573" className="bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-3 rounded-full text-white font-semibold text-sm uppercase tracking-wider hover:from-amber-600 hover:to-amber-700 transition-all">
                 Call Now
               </a>
@@ -170,37 +137,13 @@ const GalleryPage = () => {
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 pb-4 bg-black/95 rounded-lg px-4">
               <div className="flex flex-col space-y-4 pt-4">
-                <Link to="/" className="text-white font-medium hover:text-amber-400 transition-colors" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                <Link to="/about" className="text-white font-medium hover:text-amber-400 transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
-                <button
-                  type="button"
-                  onClick={() => navigateToHomeSection("services")}
-                  className="text-white font-medium hover:text-amber-400 transition-colors text-left"
-                >
-                  Services
-                </button>
-                <button
-                  type="button"
-                  onClick={() => navigateToHomeSection("menu")}
-                  className="text-white font-medium hover:text-amber-400 transition-colors text-left"
-                >
-                  Menu
-                </button>
+                <Link to="/" className="text-white font-medium hover:text-amber-400 transition-colors">Home</Link>
+                <Link to="/about" className="text-white font-medium hover:text-amber-400 transition-colors">About</Link>
+                <Link to="/#services" className="text-white font-medium hover:text-amber-400 transition-colors">Services</Link>
+                <Link to="/#menu" className="text-white font-medium hover:text-amber-400 transition-colors">Menu</Link>
                 <span className="text-amber-400 font-medium">Gallery</span>
-                <button
-                  type="button"
-                  onClick={() => navigateToHomeSection("testimonials")}
-                  className="text-white font-medium hover:text-amber-400 transition-colors text-left"
-                >
-                  Testimonials
-                </button>
-                <button
-                  type="button"
-                  onClick={() => navigateToHomeSection("contact")}
-                  className="text-white font-medium hover:text-amber-400 transition-colors text-left"
-                >
-                  Contact
-                </button>
+                <Link to="/#testimonials" className="text-white font-medium hover:text-amber-400 transition-colors">Testimonials</Link>
+                <Link to="/#contact" className="text-white font-medium hover:text-amber-400 transition-colors">Contact</Link>
                 <a href="tel:+250784347573" className="bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-3 rounded-full text-white font-semibold text-center">
                   Call Now
                 </a>
@@ -374,24 +317,16 @@ const GalleryPage = () => {
                 <li><Link to="/" className="hover:text-amber-400 transition-colors">Home</Link></li>
                 <li><Link to="/about" className="hover:text-amber-400 transition-colors">About Us</Link></li>
                 <li><Link to="/gallery" className="hover:text-amber-400 transition-colors">Gallery</Link></li>
-                <li>
-                  <button
-                    type="button"
-                    onClick={() => navigateToHomeSection("contact")}
-                    className="hover:text-amber-400 transition-colors"
-                  >
-                    Contact
-                  </button>
-                </li>
+                <li><Link to="/#contact" className="hover:text-amber-400 transition-colors">Contact</Link></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-semibold text-lg mb-6">Contact</h4>
               <ul className="space-y-3 text-gray-400">
-                <li>KK 524 St, Kigali</li>
-                <li><a href="tel:+250784347573" className="hover:text-amber-400 transition-colors">0784 347 573</a></li>
-                <li>Open 24 Hours</li>
+                <li>KK23 St, Kigali</li>
+                <li><a href="tel:+250784347573" className="hover:text-amber-400 transition-colors">+250 784 347 573</a></li>
+                <li>Open Monday-Sunday</li>
               </ul>
             </div>
           </div>
